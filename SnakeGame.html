@@ -30,6 +30,8 @@
     xv=yv=0;
     trail=[];
     tail = 5;
+    gu=gd=gl=gr=0;
+    
     function game() {
         px+=xv;
         py+=yv;
@@ -57,7 +59,7 @@
         }
         trail.push({x:px,y:py});
         while(trail.length>tail) {
-        trail.shift();
+            trail.shift();
         }
     
         if(ax==px && ay==py) {
@@ -68,19 +70,48 @@
         ctx.fillStyle="red";
         ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
     }
+
     function keyPush(evt) {
         switch(evt.keyCode) {
             case 37:
+            //left
+            if(gr==0){
                 xv=-1;yv=0;
-                break;
-            case 38:
+                gl=1;
+                gr=0;
+                gu=0;
+                gd=0;
+            }
+            break;
+        case 38:
+            //up
+            if(gd==0){
                 xv=0;yv=-1;
-                break;
-            case 39:
+                gu=1;
+                gd=0;
+                gl=0;
+                gr=0;
+            }
+            break;
+        case 39:
+            //right
+            if(gl==0){
                 xv=1;yv=0;
-                break;
-            case 40:
+                gr=1;
+                gl=0;
+                gu=0;
+                gd=0;
+            }
+            break;
+        case 40:
+            //down
+            if(gu==0){
                 xv=0;yv=1;
+                gd=1;
+                gu=0;
+                gl=0;
+                gr=0;
+            }
                 break;
         }
     }
