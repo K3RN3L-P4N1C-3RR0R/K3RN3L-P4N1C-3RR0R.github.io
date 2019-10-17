@@ -1,11 +1,18 @@
+body{
+	background-image: url(Wallpaper.jpg);
+}
+
 #gc{
     padding: 0;
     margin: auto;
     display: block;
+    border: 5px solid black;
+    border-color: green;
 }
 
 #butBack{
     padding: 0;
     margin: auto;
     display: block;
+    background-color: yellow;
 }

@@ -1,4 +1,13 @@
+body{
+	background-image: url(Neon-Wallpaper.jpg);
+}
+
 #games-ul{
+	color: white;
     align-content: center;
     text-align: center;
+}
+
+#text_li{
+	color: white;
 }
